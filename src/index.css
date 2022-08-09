@@ -11,6 +11,12 @@
 
 @layer components {
   .navLinks a {
-    @apply mx-4 font-[500] transition-all duration-200;
+    @apply mx-4 font-[500] p-2 rounded-lg shadow shadow-white hover:shadow-cyan-600 transition-all duration-200;
+  }
+  .card * {
+    @apply transition-all duration-200;
+  }
+  .step * {
+    @apply transition-all duration-200;
   }
 }

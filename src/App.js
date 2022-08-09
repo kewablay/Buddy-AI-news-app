@@ -1,7 +1,9 @@
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { useEffect } from "react";
 import Header from "./components/Header";
+import HowItWorks from "./components/HowItWorks";
 import Nav from "./components/Nav";
+import Section from "./components/Section";
 
 function App() {
   const Alan_api_key =
@@ -25,6 +27,8 @@ function App() {
     <div className="App">
       <Nav />
       <Header />
+      <Section />
+      <HowItWorks />
     </div>
   );
 }

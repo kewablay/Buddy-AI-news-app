@@ -5,9 +5,9 @@ import heroBg from "../Images/circle.png";
 
 function Header() {
   return (
-    <header className="grid grid-cols-2 px-16 mx-auto pt-[5.75rem]">
+    <header className="grid grid-cols-2 px-16 mx-auto pt-[3.75rem]">
       <div className="pt-20">
-        <h1 className="font-[600] text-6xl leading-[75px]">
+        <h1 className="font-[600] text-6xl leading-[75px] mt-8">
           Hi I'm Buddy your personal assistant
         </h1>
         <p className="text-gray-700 text-lg w-10/12 my-5 mb-7">
