@@ -1,0 +1,15 @@
+services 
+
+- news by Sources 
+- news by categories 
+- news by term
+
+how it works
+
+- click on the buddy voice button
+- Initiate a vioce command 
+    -eg Give me news from cnn
+- buddy searches for the news and displays them 
+- Say Yes if you want buddy to read the headlines
+- You can open articles by saying 
+open article no. #
