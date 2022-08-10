@@ -8,12 +8,12 @@ import open from "../Images/open.png";
 
 function HowItWorks() {
   return (
-    <div className="p-16 bg-white">
-      <h1 className="text-[40px] font-[400] ">How It Works</h1>
-      <div className="py-5 grid grid-cols-2">
-        <div className="space-y-12 relative">
+    <div className="p-10 bg-white text-center md:text-left md:p-16">
+      <h1 className="text-[32px] font-[400] md:text-[40px] ">How It Works</h1>
+      <div className="py-5 flex flex-col-reverse md:grid grid-cols-2 ">
+        <div className="space-y-12 relative mx-auto">
           {/* Line */}
-          <div className="w-[2px] h-3/4 bg-gray-300 absolute left-3 top-16"></div>
+          <div className="w-[2px] h-3/4 bg-gray-300 absolute sm:left-3 md:top-16 top-20 left-2"></div>
           <Step
             img={buddyButton}
             content={
@@ -33,13 +33,13 @@ function HowItWorks() {
           />
           <Step
             img={open}
-            content={"You can open articles by saying open article no. #"}
+            content={"You can open articles by saying, 'Open article no. #'"}
             number={"4"}
           />
 
           {/* steps content */}
         </div>
-        <div>
+        <div className="flex justify-center items-center">
           <img src={hero} alt="" />
         </div>
       </div>

@@ -5,20 +5,21 @@ import heroBg from "../Images/circle.png";
 
 function Header() {
   return (
-    <header className="grid grid-cols-2 px-16 mx-auto pt-[3.75rem]">
-      <div className="pt-20">
-        <h1 className="font-[600] text-6xl leading-[75px] mt-8">
+    <header className="flex flex-col-reverse md:grid sm:grid-cols-2 relative px-16  pt-[3.75rem]">
+      {/* Intro TExt */}
+      <div className=" pt-4 md:pt-20 text-center md:text-left">
+        <h1 className="font-[600] text-[35px] mt-8 md:text-6xl md:leading-[75px] ">
           Hi I'm Buddy your personal assistant
         </h1>
-        <p className="text-gray-700 text-lg w-10/12 my-5 mb-7">
+        <p className="text-gray-700 text-md my-5 mb-7 md:w-10/12 md:text-lg">
           Magic everything easily, getl all your favorite news with just a vioce
-          command 😇
+          command.
         </p>
         <div>
           <Button text={"Explore more"} px={"1.7rem"} py={"1rem"} />
         </div>
       </div>
-
+      {/* hero image */}
       <div className="relative ">
         <img
           src={heroBg}

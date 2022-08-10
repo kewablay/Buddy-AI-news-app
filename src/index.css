@@ -11,10 +11,13 @@
 
 @layer components {
   .navLinks a {
-    @apply mx-4 font-[500] p-2 rounded-lg shadow shadow-white hover:shadow-cyan-600 transition-all duration-200;
+    @apply mx-4 font-[500] md:p-2 md:rounded-lg md:shadow md:shadow-white hover:shadow-cyan-600 transition-all duration-200;
   }
   .card * {
     @apply transition-all duration-200;
+  }
+  .section .card:nth-child(1) {
+    @apply sm:mb-32;
   }
   .step * {
     @apply transition-all duration-200;
