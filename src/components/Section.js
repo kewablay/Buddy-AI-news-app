@@ -6,7 +6,7 @@ import categoryImg from "../Images/category.png";
 
 function Section() {
   return (
-    <div className="grid grid-cols-3 p-28">
+    <div className="section flex flex-col p-16 mt-28 space-y-48 sm:grid-cols-2 sm:grid sm:px-4  sm:space-y-0 md:grid-cols-3 lg:p-10 xl:p-24 ">
       <Card
         title={"News by Sources"}
         content={"Get the latest news from your favorite sources"}

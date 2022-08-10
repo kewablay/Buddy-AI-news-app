@@ -6,11 +6,11 @@ function Step({ img, content, number }) {
       <div className="w-7 h-7 rounded-full bg-orange-400 my-auto mr-4 z-10 text-center text-white font-bold pt-[2px] group-hover:scale-150">
         {number}
       </div>
-      <div className="flex space-x-4 p-2 rounded-full bg-white shadow-md border-2 border-blue-700  border-y-cyan-200 border-r-8 border-r-blue-200 hover:hover:border-r-blue-700 ">
-        <div>
+      <div className="flex space-x-4 p-2 rounded-full bg-white shadow-md border-2 border-blue-700  border-y-cyan-200 border-r-8 border-r-blue-200 hover:hover:border-r-blue-700">
+        <div className="flex justify-center items-center">
           <img className="w-10" src={img} alt="" />
         </div>
-        <p className="my-auto">{content}</p>
+        <p className="my-auto text-[13px] md:text-md text-left">{content}</p>
       </div>
     </div>
   );

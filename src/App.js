@@ -1,5 +1,7 @@
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { useEffect } from "react";
+import Explore from "./components/Explore";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HowItWorks from "./components/HowItWorks";
 import Nav from "./components/Nav";
@@ -29,6 +31,8 @@ function App() {
       <Header />
       <Section />
       <HowItWorks />
+      <Explore />
+      <Footer />
     </div>
   );
 }
