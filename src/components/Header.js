@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import heroImage from "../Images/Buddy.gif";
 import heroBg from "../Images/circle.png";
+import loginIcon from "../Images/login.png";
 
 function Header() {
   return (
@@ -16,7 +17,12 @@ function Header() {
           command.
         </p>
         <div>
-          <Button text={"Explore more"} px={"1.7rem"} py={"1rem"} />
+          <Button
+            text={"Explore more"}
+            px={"1.7rem"}
+            py={"1rem"}
+            icon={loginIcon}
+          />
         </div>
       </div>
       {/* hero image */}

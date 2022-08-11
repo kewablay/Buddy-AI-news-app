@@ -1,15 +1,15 @@
 import alanBtn from "@alan-ai/alan-sdk-web";
-import { useEffect } from "react";
-import Explore from "./components/Explore";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import HowItWorks from "./components/HowItWorks";
-import Nav from "./components/Nav";
-import Section from "./components/Section";
+import { useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import GetNews from "./pages/GetNews";
 
 function App() {
   const Alan_api_key =
     "35bcaa59be0774e7a44d1609670243b82e956eca572e1d8b807a3e2338fdd0dc/stage";
+
+  const [allArticles, setAllArticles] = useState([]);
 
   useEffect(() => {
     alanBtn({
@@ -20,6 +20,7 @@ function App() {
         }
         if (command === "newHeadlines") {
           console.log(articles);
+          setAllArticles(articles);
         }
       },
     });
@@ -27,12 +28,12 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
-      <Header />
-      <Section />
-      <HowItWorks />
-      <Explore />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<GetNews articles={allArticles} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
