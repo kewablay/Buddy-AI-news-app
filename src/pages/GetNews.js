@@ -1,14 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import NewsCard from "../components/NewsCard";
 import buddyBg from "../Images/bg.gif";
 import realBuddy from "../Images/Cute.png";
 
 function GetNews({ articles }) {
-  console.log("articles: ", articles);
+  console.log(articles);
+  const navigate = useNavigate();
+  if (articles) {
+    navigate("/results");
+  }
   return (
-    <div className="grid grid-cols-3 space-x-3 p-16">
+    <div className="flex flex-col md:grid grid-cols-3 space-y-10 md:space-y-0 md:space-x-3 p-16 sm:p-20 md:px-8">
       <div className="space-y-16">
-        <div className="rounded-xl bg-gradient-to-r  from-blue-600 to-red-200  p-2">
+        <div className="rounded-xl bg-gradient-to-r from-blue-600 to-red-200  p-2">
           {/* news Card  */}
           <NewsCard
             title={"Latest News"}
@@ -27,8 +32,8 @@ function GetNews({ articles }) {
         </div>
       </div>
       {/* Buddy iamge */}
-      <div>
-        <div className=" relative rounded-xl overflow-hidden">
+      <div className="flex justify-center items-center ">
+        <div className="relative rounded-xl overflow-hidden">
           <img
             className="w-full h-full absolute object-cover -z-10 opacity-5"
             src={buddyBg}
