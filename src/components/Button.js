@@ -1,15 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Button({ py, px, text }) {
+function Button({ py, px, text, icon }) {
   return (
     <div>
-      <a
-        href="#"
-        className="rounded-full font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md transition-all duration-200 hover:brightness-200 "
+      <Link
+        to={"/news"}
+        className="rounded-full font-bold flex w-fit bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md transition-all duration-200 hover:brightness-200 "
         style={{ padding: `${py} ${px}` }}
       >
         {text}
-      </a>
+
+        {icon && (
+          <span className="ml-2">
+            <img src={icon} alt="" />
+          </span>
+        )}
+      </Link>
     </div>
   );
 }

@@ -22,4 +22,7 @@
   .step * {
     @apply transition-all duration-200;
   }
+  .newsCard * {
+    @apply transition-all duration-300;
+  }
 }

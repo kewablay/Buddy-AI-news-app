@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import ReadyImg from "../Images/ready.png";
+import loginIcon from "../Images/login.png";
 
 function Explore() {
   return (
@@ -20,7 +21,12 @@ function Explore() {
             the Buddy button and say "Get Started".
           </p>
           <div>
-            <Button text={"Let's Go"} px={"1.7rem"} py={"1rem"} />
+            <Button
+              text={"Let's Go"}
+              px={"1.7rem"}
+              py={"1rem"}
+              icon={loginIcon}
+            />
           </div>
         </div>
       </div>
