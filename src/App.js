@@ -4,7 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import GetNews from "./pages/GetNews";
-import Results from "./components/Results";
+import Results from "./pages/Results";
 
 function App() {
   const Alan_api_key =

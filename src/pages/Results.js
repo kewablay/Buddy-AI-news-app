@@ -1,25 +1,35 @@
 import React from "react";
 import technicalRobot from "../Images/cuteRobot.png";
 import resultsBg from "../Images/resultsBg.jpg";
+import Logo from "../Images/buddyLogo.png";
 
-import sources from "../Images/sources.png";
-import Article from "./Article";
+import Article from "../components/Article";
 import { useNavigate } from "react-router-dom";
 
 function Results({ articles }) {
   const navigate = useNavigate();
   const banner = articles[Math.floor(Math.random() * articles.length - 1)];
   console.log("Banner article: ", banner);
+
+  function truncate(string, n) {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  }
+
   return (
     <div className="px-8 md:px-8 py-16">
-      <button
-        className="fixed top-3 left-3 bg-blue-600 text-white p-2 rounded-xl"
-        onClick={() => navigate("/news")}
-      >
-        Back
-      </button>
+      <nav className="fixed top-0 left-0 shadow-lg p-2 z-50 bg-white flex justify-between w-full">
+        <div>
+          <img className="w-28" src={Logo} alt="" />
+        </div>
+        <button
+          className="bg-blue-600 text-white p-2 rounded-xl"
+          onClick={() => navigate("/news")}
+        >
+          Back
+        </button>
+      </nav>
       {/* banner */}
-      <div className="grid md:grid-cols-[2.5fr_1fr] md:space-x-8 mb-12">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-[2.5fr_1fr] md:space-x-8 mb-12">
         {/* Main Banner */}
         <div className="relative w-full h-[70vh] rounded-lg overflow-hidden shadow-xl">
           {/* overlay */}
@@ -34,7 +44,7 @@ function Results({ articles }) {
           {/* Banner contents */}
           <div className="absolute left-0 bottom-0 z-50 p-4 h-full flex flex-col justify-between md:px-12 text-gray-100">
             <div className="flex space-x-5">
-              <p>{banner?.author}</p>
+              <p>{truncate(banner?.author, 28)}</p>
               <p>24/09/2022</p>
             </div>
             <div>
@@ -53,7 +63,7 @@ function Results({ articles }) {
           </div>
         </div>
         {/* side Banner */}
-        <div className="relative bg-gradient-to-t from-black to-blue-900  rounded-lg overflow-hidden">
+        <div className="relative bg-gradient-to-t from-black to-blue-900  rounded-lg overflow-hidden hidden md:flex justify-center items-center ">
           <img
             className="w-full z-50 object-cover"
             src={technicalRobot}
@@ -67,14 +77,19 @@ function Results({ articles }) {
         </div>
       </div>
 
+      {/* section title */}
+      <div className="mb-10 text-3xl font-[600] text-blue-700">
+        <h2>Latest articles on {banner.source.name}</h2>
+      </div>
+
       {/* All news Articles */}
-      <div className="grid grid-cols-4 gap-12">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
         {articles.map((article, key) => (
           <Article
             img={article?.urlToImage}
             title={article?.title}
             date={"10/9/2020"}
-            author={article?.author}
+            author={article?.author ? article?.author : article?.source.name}
             source={article?.source.name}
             num={key + 1}
           />
