@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Article({ img, title, content, url, date, source, author, num }) {
   function truncate(string, n) {
@@ -12,17 +13,19 @@ function Article({ img, title, content, url, date, source, author, num }) {
       </div>
       <div className="p-3 flex flex-col justify-between sm:h-[12.5rem]">
         <div>
-          <div className="flex justify-between text-sm mb-3 mt-2 pr-1">
+          <div className="flex justify-between text-xs mb-3 pr-1 sm:mt-2 sm:text-sm">
             <p className="whitespace-nowrap overflow-hidden text-ellipsis mr-8">
               {author}
             </p>
             <p>{date}</p>
           </div>
-          <h2 className="text-gray-800">{truncate(title, 80)}</h2>
+          <h2 className="text-gray-800 text-sm sm:text-base hover:text-green-600">
+            {truncate(title, 80)}
+          </h2>
         </div>
         <div>
           {/* <p>{content}</p> */}
-          <div className="flex justify-between ">
+          <div className="flex justify-between text-xs md:text-sm">
             <p>{source}</p>
             <p>{num}</p>
           </div>

@@ -4,7 +4,7 @@ import resultsBg from "../Images/resultsBg.jpg";
 import Logo from "../Images/buddyLogo.png";
 
 import Article from "../components/Article";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Results({ articles }) {
   const navigate = useNavigate();
@@ -17,10 +17,10 @@ function Results({ articles }) {
 
   return (
     <div className="px-8 md:px-8 py-16">
-      <nav className="fixed top-0 left-0 shadow-lg p-2 z-50 bg-white flex justify-between w-full">
-        <div>
+      <nav className="fixed top-0 left-0 shadow-lg p-2 z-[1000] bg-white flex justify-between w-full">
+        <Link to="/" className="cursor-pointer">
           <img className="w-28" src={Logo} alt="" />
-        </div>
+        </Link>
         <button
           className="bg-blue-600 text-white p-2 rounded-xl"
           onClick={() => navigate("/news")}
@@ -42,7 +42,7 @@ function Results({ articles }) {
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
           {/* Banner contents */}
-          <div className="absolute left-0 bottom-0 z-50 p-4 h-full flex flex-col justify-between md:px-12 text-gray-100">
+          <div className="absolute left-0 bottom-0 z-50 p-4 h-full flex flex-col justify-between md:px-12 text-gray-100 text-sm sm:text-md md:text-base">
             <div className="flex space-x-5">
               <p>{truncate(banner?.author, 28)}</p>
               <p>24/09/2022</p>
@@ -58,10 +58,13 @@ function Results({ articles }) {
                 {banner?.source.name}
               </p>
               {/* aticle title */}
-              <h2 className="text-white text-2xl mb-4">{banner?.title}</h2>
+              <h2 className="text-white text-xl mb-4 md:text-2xl">
+                {banner?.title}
+              </h2>
             </div>
           </div>
         </div>
+
         {/* side Banner */}
         <div className="relative bg-gradient-to-t from-black to-blue-900  rounded-lg overflow-hidden hidden md:flex justify-center items-center ">
           <img
@@ -89,6 +92,7 @@ function Results({ articles }) {
             img={article?.urlToImage}
             title={article?.title}
             date={"10/9/2020"}
+            url={article?.url}
             author={article?.author ? article?.author : article?.source.name}
             source={article?.source.name}
             num={key + 1}

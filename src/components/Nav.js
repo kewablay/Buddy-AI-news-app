@@ -2,16 +2,17 @@ import Button from "./Button";
 import Logo from "../Images/buddyLogo.png";
 import Toggle from "../Images/hamburger.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-gray-50 px-4  py-3 flex justify-between items-center shadow-md md:px-10 ">
+    <nav className="fixed top-0 left-0 z-[1000] w-full bg-gray-50 px-4  py-3 flex justify-between items-center shadow-md md:px-10 ">
       {/* brandh */}
-      <div>
+      <Link to="/" className="cursor-pointer">
         <img className="w-32" src={Logo} alt="" />
-      </div>
+      </Link>
       {/* nav links */}
       <div
         className={`navLinks absolute flex space-y-4 text-center flex-col w-full bg bg-gray-50 shadow-2xl  ${
