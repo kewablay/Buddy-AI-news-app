@@ -31,7 +31,7 @@ function Results({ articles }) {
       {/* banner */}
       <div className="flex flex-col-reverse md:grid md:grid-cols-[2.5fr_1fr] md:space-x-8 mb-12">
         {/* Main Banner */}
-        <div className="relative w-full h-[70vh] rounded-lg overflow-hidden shadow-xl">
+        <div className="relative w-full h-[60vh] sm:h-[70vh] rounded-lg overflow-hidden shadow-xl">
           {/* overlay */}
           <div className="absolute left-0 bottom-0 z-30 w-full h-full opacity-50 bg-gradient-to-t from-black to-gray-700 "></div>
           <div className="absolute left-0 bottom-0 z-30 w-full h-36 opacity-90 bg-gradient-to-t from-black  "></div>
