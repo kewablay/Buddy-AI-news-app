@@ -4,6 +4,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import GetNews from "./pages/GetNews";
+import Results from "./pages/Results";
 
 function App() {
   const Alan_api_key =
@@ -30,8 +31,9 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/news" element={<GetNews articles={allArticles} />} />
+          <Route path="/results" element={<Results articles={allArticles} />} />
         </Routes>
       </Router>
     </div>
