@@ -1,13 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { createRef, useEffect, useState } from "react";
 
-function Article({ img, title, content, url, date, source, author, num }) {
+function Article({
+  img,
+  title,
+  url,
+  date,
+  source,
+  author,
+  num,
+  activeArticle,
+}) {
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
 
+  const [elRefs, setElRefs] = useState([]);
+  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 80);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+
+    setElRefs((refs) =>
+      Array(20)
+        .fill()
+        .map((_, j) => refs[j] || createRef())
+    );
+  }, []);
+
+  useEffect(() => {
+    if (num === activeArticle && elRefs[activeArticle]) {
+      scrollToRef(elRefs[activeArticle]);
+    }
+  }, [num, activeArticle, elRefs]);
+
   return (
-    <div className="border-4 rounded-lg overflow-hidden shadow-lg grid grid-cols-2 h-[11.5rem] sm:h-auto sm:flex flex-col">
+    <div
+      ref={elRefs[num]}
+      className={`border-4 rounded-lg overflow-hidden shadow-lg grid grid-cols-2 h-[11.5rem] sm:h-auto sm:flex flex-col transition-all duration-300 ${
+        activeArticle === num && " shadow-cyan-400 scale-105"
+      }`}
+    >
       <div className=" overflow-hidden sm:h-[11.5rem]">
         <img src={img} alt="" className="w-full h-full object-cover" />
       </div>

@@ -6,7 +6,7 @@ import Logo from "../Images/buddyLogo.png";
 import Article from "../components/Article";
 import { Link, useNavigate } from "react-router-dom";
 
-function Results({ articles }) {
+function Results({ articles, activeArticle }) {
   const navigate = useNavigate();
   const banner = articles[Math.floor(Math.random() * articles.length - 1)];
   console.log("Banner article: ", banner);
@@ -96,6 +96,7 @@ function Results({ articles }) {
             author={article?.author ? article?.author : article?.source.name}
             source={article?.source.name}
             num={key + 1}
+            activeArticle={activeArticle}
           />
         ))}
       </div>
