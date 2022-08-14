@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import technicalRobot from "../Images/cuteRobot.png";
 import resultsBg from "../Images/resultsBg.jpg";
 import Logo from "../Images/buddyLogo.png";
@@ -8,17 +8,20 @@ import Time from "../Images/time.png";
 import Article from "../components/Article";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
-function Results({ articles, activeArticle }) {
+function Results({ articles, activeArticle, changed }) {
   const navigate = useNavigate();
-  console.log("articles: ", articles);
+  console.log("articles in results: ", articles);
 
-  if (!articles.length) {
-    console.log("no articles ....");
-  }
-
-  const banner = articles
+  const selectedArticle = articles
     ? articles[Math.floor(Math.random() * articles.length - 1)]
     : [];
+
+  const [banner, setBanner] = useState(selectedArticle);
+
+  // if (changed) {
+  //   setBanner(articles[Math.floor(Math.random() * articles.length - 1)]);
+  // }
+
   console.log("Banner article: ", banner);
 
   function truncate(string, n) {
@@ -37,7 +40,7 @@ function Results({ articles, activeArticle }) {
             </Link>
             <button
               className="bg-blue-600 text-white p-2 rounded-xl"
-              onClick={() => navigate("/news")}
+              onClick={() => navigate("/")}
             >
               Back
             </button>
@@ -116,6 +119,7 @@ function Results({ articles, activeArticle }) {
           <div className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
             {articles.map((article, key) => (
               <Article
+                key={key}
                 img={article?.urlToImage}
                 title={article?.title}
                 date={"10/9/2020"}
