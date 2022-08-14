@@ -21,11 +21,11 @@ function Article({
     window.scroll(0, 0);
 
     setElRefs((refs) =>
-      Array(20)
+      Array(num + 1)
         .fill()
         .map((_, j) => refs[j] || createRef())
     );
-  }, []);
+  }, [num]);
 
   useEffect(() => {
     if (num === activeArticle && elRefs[activeArticle]) {
