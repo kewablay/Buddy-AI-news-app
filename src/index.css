@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     /* @apply bg-blue-50 dark:bg-gradient-to-br from-gray-900 to-gray-800; */
     @apply bg-blue-50;
@@ -24,5 +27,8 @@
   }
   .newsCard * {
     @apply transition-all duration-300;
+  }
+  .article * {
+    @apply transition-all duration-200;
   }
 }

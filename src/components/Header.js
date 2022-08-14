@@ -13,10 +13,10 @@ function Header() {
           Hi I'm Buddy your personal assistant
         </h1>
         <p className="text-gray-700 text-md my-5 mb-7 md:w-10/12 md:text-lg">
-          Magic everything easily, getl all your favorite news with just a vioce
+          Magic everything easily, get all your favorite news with just a vioce
           command.
         </p>
-        <div>
+        <div className="flex justify-center items-center md:justify-start">
           <Button
             text={"Explore more"}
             px={"1.7rem"}
