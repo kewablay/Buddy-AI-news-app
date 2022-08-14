@@ -52,13 +52,18 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/news" element={<GetNews articles={allArticles} />} />
           <Route
+            path="/news"
+            element={
+              <GetNews articles={allArticles} activeArticle={activeArticle} />
+            }
+          />
+          {/* <Route
             path="/results"
             element={
               <Results articles={allArticles} activeArticle={activeArticle} />
             }
-          />
+          /> */}
         </Routes>
       </Router>
     </div>
