@@ -36,7 +36,7 @@ function Article({
   return (
     <div
       ref={elRefs[num]}
-      className={`border-4 rounded-lg overflow-hidden shadow-lg grid grid-cols-2 h-[11.5rem] sm:h-auto sm:flex flex-col transition-all duration-300 ${
+      className={`article border-4 rounded-lg overflow-hidden shadow-lg grid grid-cols-2 h-[11.5rem] sm:h-auto sm:flex flex-col  hover:shadow-cyan-400 hover:scale-105 transition-all duration-300 ${
         activeArticle === num && " shadow-cyan-400 scale-105"
       }`}
     >

@@ -6,9 +6,9 @@ import realBuddy from "../Images/Cute.png";
 import Logo from "../Images/buddyLogo.png";
 
 function GetNews({ articles }) {
-  console.log(articles);
+  console.log("articles: ", articles);
   const navigate = useNavigate();
-  if (articles) {
+  if (articles.length) {
     navigate("/results");
   }
   return (
@@ -67,7 +67,7 @@ function GetNews({ articles }) {
               voiceCommand={"news from CNN"}
               subtitle={"Sources: "}
               content={
-                "BBC News, CNN, ESPN, Fox News, ABC News, Techcrunch,Aljazeera English, Focus, Fox Sports"
+                "BBC News, CNN, ESPN, Fox News, ABC News, Techcrunch,BuzzFeed, Aljazeera English, Time, Wired, Focus, Fox Sports"
               }
             />
           </div>

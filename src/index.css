@@ -28,4 +28,7 @@
   .newsCard * {
     @apply transition-all duration-300;
   }
+  .article * {
+    @apply transition-all duration-200;
+  }
 }
